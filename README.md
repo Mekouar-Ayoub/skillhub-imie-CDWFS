@@ -82,24 +82,13 @@ MIT License - Formation SkillHub
 ### **Instructions de Déploiement sur GitHub**
 
 ```bash
-# 1. Créer le repository sur GitHub
+# 1. Vous avez deja le repository Git
 # Allez sur github.com et créez un nouveau repository nommé "skillhub-starter"
-
-# 2. Initialiser Git localement
-cd skillhub-starter
-git init
-git add .
-git commit -m "🎉 Initial commit: SkillHub Symfony starter pack"
-
-# 3. Lier au repository distant
-git remote add origin https://github.com/votre-organisation/skillhub-starter.git
-git branch -M main
-git push -u origin main
 
 # 4. Créer un tag de version
 git tag -a v1.0.0 -m "Version 1.0.0: Starter pack avec auth et liste formateurs"
 git push origin v1.0.0
-Fichiers Clés à Inclure
+Fichiers Clés à Inclure (mettez les dans EC02)
 1. .gitignore
 
 ###> symfony/framework-bundle ###
@@ -139,18 +128,6 @@ APP_ENV=dev
 APP_SECRET=changeme
 
 DATABASE_URL="mysql://root:password@127.0.0.1:3306/skillhub?serverVersion=8.0"
-🚀 Pour Déployer sur GitHub
+🚀 Pour push sur GitHub
 Option A - Via GitHub Desktop :
-
-Ouvrez GitHub Desktop
-File → New Repository → "skillhub-starter"
-Copiez tous les fichiers dans le dossier créé
-Commit → Publish repository
 Option B - Via Ligne de Commande : Utilisez les commandes fournies ci-dessus dans "Instructions de Déploiement"
-
-Le code squelette complet est déjà visible dans la slide 52 avec toute la structure du projet. Les étudiants pourront :
-
-✅ Cloner le repository
-✅ Installer les dépendances avec composer install
-✅ Lancer les migrations
-✅ Démarrer immédiatement avec symfony serve
