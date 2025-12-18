@@ -75,3 +75,82 @@ Les étudiants du Bachelor CDWFS 2025-2026 peuvent contribuer via Pull Requests.
 
 📄 Licence
 MIT License - Formation SkillHub
+
+
+---
+
+### **Instructions de Déploiement sur GitHub**
+
+```bash
+# 1. Créer le repository sur GitHub
+# Allez sur github.com et créez un nouveau repository nommé "skillhub-starter"
+
+# 2. Initialiser Git localement
+cd skillhub-starter
+git init
+git add .
+git commit -m "🎉 Initial commit: SkillHub Symfony starter pack"
+
+# 3. Lier au repository distant
+git remote add origin https://github.com/votre-organisation/skillhub-starter.git
+git branch -M main
+git push -u origin main
+
+# 4. Créer un tag de version
+git tag -a v1.0.0 -m "Version 1.0.0: Starter pack avec auth et liste formateurs"
+git push origin v1.0.0
+Fichiers Clés à Inclure
+1. .gitignore
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+2. composer.json (extrait)
+
+Copy{
+    "name": "skillhub/starter",
+    "type": "project",
+    "description": "SkillHub Symfony Starter Pack",
+    "require": {
+        "php": ">=8.1",
+        "symfony/console": "6.4.*",
+        "symfony/framework-bundle": "6.4.*",
+        "symfony/security-bundle": "6.4.*",
+        "symfony/twig-bundle": "6.4.*",
+        "symfony/orm-pack": "^2.0",
+        "doctrine/doctrine-bundle": "^2.10",
+        "doctrine/doctrine-migrations-bundle": "^3.2"
+    }
+}
+3. .env (exemple)
+
+APP_ENV=dev
+APP_SECRET=changeme
+
+DATABASE_URL="mysql://root:password@127.0.0.1:3306/skillhub?serverVersion=8.0"
+🚀 Pour Déployer sur GitHub
+Option A - Via GitHub Desktop :
+
+Ouvrez GitHub Desktop
+File → New Repository → "skillhub-starter"
+Copiez tous les fichiers dans le dossier créé
+Commit → Publish repository
+Option B - Via Ligne de Commande : Utilisez les commandes fournies ci-dessus dans "Instructions de Déploiement"
+
+Le code squelette complet est déjà visible dans la slide 52 avec toute la structure du projet. Les étudiants pourront :
+
+✅ Cloner le repository
+✅ Installer les dépendances avec composer install
+✅ Lancer les migrations
+✅ Démarrer immédiatement avec symfony serve
